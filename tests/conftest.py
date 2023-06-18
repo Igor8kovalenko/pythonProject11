@@ -90,6 +90,58 @@ def expeted_result_for_read_json_test():
         "code": "RUB"
     }
                        }
-@pytest.fixture
+@pytest.fixture()
 def path_to_test_json():
-    return os.path.join(os.path.dirname(__file__), 'test_operations.json') == expeted_result_for_read_json_test
+    return os.path.join(os.path.dirname(__file__), 'test_operations.json') == expected_result_for_read_json_test
+
+@pytest.fixture()
+def data_for_sort():
+  return [{
+    "id": 441945886,
+    "state": "EXECUTED",
+    "date": "2019-08-26T10:50:58.294041",
+    "operationAmount": {
+      "amount": "31957.58",
+      "currency": {
+        "name": "руб.",
+        "code": "RUB"
+      }
+    },
+    "description": "Перевод организации",
+    "from": "Maestro 1596837868705199",
+    "to": "Счет 64686473678894779589"
+  },
+    {
+      "id": 710136990,
+      "state": "CANCELED",
+      "date": "2018-08-17T03:57:28.607101",
+      "operationAmount": {
+        "amount": "66906.45",
+        "currency": {
+          "name": "USD",
+          "code": "USD"
+        }
+      },
+      "description": "Перевод организации",
+      "from": "Maestro 1913883747791351",
+      "to": "Счет 11492155674319392427"
+    }
+  ]
+
+@pytest.fixture
+def expected_result_for_read_json_test():
+  return [{
+    "id": 441945886,
+    "state": "EXECUTED",
+    "date": "2019-08-26T10:50:58.294041",
+    "operationAmount": {
+      "amount": "31957.58",
+      "currency": {
+        "name": "руб.",
+        "code": "RUB"
+      }
+    },
+    "description": "Перевод организации",
+    "from": "Maestro 1596837868705199",
+    "to": "Счет 64686473678894779589"
+  }]
