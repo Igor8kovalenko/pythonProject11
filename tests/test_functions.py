@@ -1,5 +1,4 @@
-from coverage import data
-from poetry.installation.operations import operation
+
 from src.functions import change_date_format, sort_data, read_json, masking_card, output_data, output_money
 import unittest
 import pytest
@@ -84,7 +83,7 @@ def test_output_money():
             "currency": {
                 "name": "руб.",
                 "code": "RUB"
-            } ))== '31957.58 руб.'
+            }} ))== '31957.58 руб.'
 
 def test_output_data():
     assert (output_data('2019-07-03T18:35:29.512364')) == '2019-07-03T18:35:29.512364'
