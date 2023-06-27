@@ -79,7 +79,12 @@ def test_masking_card():
 # #
 
 def test_output_money():
-    assert (output_money(operation.get('8221.37'))) == '8221.37'
+    assert (output_money({
+            "amount": "31957.58",
+            "currency": {
+                "name": "руб.",
+                "code": "RUB"
+            } ))== '31957.58 руб.'
 
 def test_output_data():
     assert (output_data('2019-07-03T18:35:29.512364')) == '2019-07-03T18:35:29.512364'
