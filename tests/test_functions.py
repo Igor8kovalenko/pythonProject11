@@ -78,11 +78,11 @@ def test_masking_card():
     assert masking_card("Maestro 7810846596785568") == "Maestro 7810 84** **** 5568"
 # #
 
-def test_output_money(operation_amount):
-    assert (operation_amount.keys('8221.37')) == '8221.37'
+def test_output_money():
+    assert (output_money(operation.get('8221.37'))) == '8221.37'
 
-# def test_output_data():
-
+def test_output_data():
+    assert (output_data('2019-07-03T18:35:29.512364')) == '2019-07-03T18:35:29.512364'
 
 if __name__ == '__main__':
     unittest.main()
